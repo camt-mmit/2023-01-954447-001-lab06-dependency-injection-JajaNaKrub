@@ -1,0 +1,46 @@
+<div class="sec">
+  <div class="sec-header">
+    <button type="button" (click)="add()" class="input-add">
+      <span class="material-symbols-outlined">add</span>
+    </button>
+    <h3>Section {{ section }}</h3>
+    <button
+      type="button"
+      (click)="deleteSelf.emit()"
+      class="sec-delete"
+      [disabled]="nonDeleteabled"
+    >
+      <span class="material-symbols-outlined">delete_forever</span>
+    </button>
+  </div>
+  <div class="input-list">
+    <div *ngFor="let item of items; let i = index" class="input-container">
+      <label>
+        <span class="input-title">Input {{ i + 1 }} </span>
+        <input
+          #elem
+          type="number"
+          [value]="item.value"
+          (change)="onChange(i, elem.valueAsNumber)"
+          class="input-element"
+        />
+      </label>
+      <button
+        type="button"
+        (click)="delete(i)"
+        class="input-delete"
+        [disabled]="items.length === 1"
+      >
+        <span class="material-symbols-outlined">delete_forever</span>
+      </button>
+    </div>
+  </div>
+  <div>
+    <div class="footer">
+      <b class="result-title">Result </b>
+      <output class="result-output">{{ getResult() }}</output>
+    </div>
+  </div>
+</div>
+
+<br />

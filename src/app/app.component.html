@@ -1,0 +1,48 @@
+<!-- <h1>{{ title }} app is running</h1>
+<div>
+  <ng-template ngFor [ngForOf]="[10, 20, 30]" let-value let-i="index">
+    {{ i }} : {{ value }} <br />
+  </ng-template>
+</div>
+<br />
+<div>
+  <ng-container *ngFor="let value of [10, 20, 30]; let i = index">
+    {{ i }} : {{ value }} <br />
+  </ng-container>
+</div>
+<br />
+
+<div>
+  <ng-template ngFor [ngForOf]="products" let-product let-i="index">
+    No. {{ i + 1 }} : [{{ product.code }}] {{ product.name }}<br />
+  </ng-template>
+</div>
+<br />
+
+<div>
+  <ng-container *ngFor="let product of products; let i = index">
+    No. {{ i + 1 }} : [{{ product.code }}] {{ product.name }}<br />
+  </ng-container>
+</div>
+<br />
+
+<div>
+  External : <output>{{ externalMessage }}</output
+  ><br />
+  <app-two-ways [(message)]="externalMessage" />
+</div> -->
+<head>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:op
+sz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  />
+</head>
+<nav>
+  <a href="./try-one/">Try one</a>
+  <a href="./try-two/">Try two</a>
+  <a href="./try-three/">Try three</a>
+  <a href="./lab-5/">LAB5</a>
+</nav>
+<h1>{{ title }}</h1>
+<router-outlet></router-outlet>

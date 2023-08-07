@@ -1,0 +1,16 @@
+<div class="all-section">
+  <button type="button" (click)="addSec()">
+    <span class="material-symbols-outlined">add</span>Section
+  </button>
+  <div class="section-group">
+    <app-dynamic-input
+      *ngFor="let item of items; let i = index"
+      [section]="i + 1"
+      [items]="item"
+      [nonDeleteabled]="items.length === 1"
+      (deleteSelf)="deleteSec(i)"
+      (dataChange)="onDataChange()"
+      class="each-section"
+    />
+  </div>
+</div>

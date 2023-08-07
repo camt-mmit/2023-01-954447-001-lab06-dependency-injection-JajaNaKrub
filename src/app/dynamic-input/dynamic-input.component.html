@@ -1,0 +1,32 @@
+<button type="button" (click)="add()" class="input-add">
+  <span class="material-symbols-outlined">add</span>
+</button>
+<br />
+<div class="input-list">
+  <div *ngFor="let item of items; let i = index" class="input-container">
+    <label>
+      <span class="input-title">Input {{ i + 1 }} </span>
+      <input
+        #elem
+        type="number"
+        [value]="item.value"
+        (change)="onChange(i, elem.valueAsNumber)"
+        class="input-element"
+      />
+    </label>
+    <button
+      type="button"
+      (click)="delete(i)"
+      class="input-delete"
+      [disabled]="isDisabled"
+    >
+      <span class="material-symbols-outlined">delete_forever</span>
+    </button>
+  </div>
+</div>
+<div>
+  <div class="footer">
+    <b class="result-title">Result </b>
+    <output class="result-output">{{ getResult() }}</output>
+  </div>
+</div>

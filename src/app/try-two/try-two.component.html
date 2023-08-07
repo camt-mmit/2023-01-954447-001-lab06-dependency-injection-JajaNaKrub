@@ -1,0 +1,10 @@
+<h2>Try Two</h2>
+<div *ngFor="let item of items; let i = index">
+  <input
+    #elem
+    type="number"
+    [value]="item.value"
+    (change)="onChange(i, elem.valueAsNumber)"
+  />
+</div>
+<output>{{ items[0].value }}, {{ items[1].value }}</output>
